@@ -7,17 +7,33 @@ import {
   LayoutDashboardIcon,
   LogOutIcon,
   MenuIcon,
+  PhoneIcon,
+  WhatsAppIcon,
   XIcon,
 } from '../icons'
 
 const navigation = [
   { label: 'Dashboard', path: '/admin', icon: LayoutDashboardIcon, end: true },
   { label: 'Cars', path: '/admin/cars', icon: CarIcon, end: false },
+  {
+    label: 'Contact Us Info',
+    path: '/admin/contact-info',
+    icon: PhoneIcon,
+    end: false,
+  },
+  {
+    label: 'WhatsApp',
+    path: '/admin/whatsapp',
+    icon: WhatsAppIcon,
+    end: false,
+  },
 ]
 
 function getPageTitle(pathname: string): string {
   if (pathname === '/admin') return 'Dashboard'
   if (pathname === '/admin/cars') return 'Cars'
+  if (pathname === '/admin/contact-info') return 'Contact Us Info'
+  if (pathname === '/admin/whatsapp') return 'WhatsApp'
   if (pathname === '/admin/cars/new') return 'Add Car'
   if (pathname.startsWith('/admin/cars/') && pathname.endsWith('/edit'))
     return 'Edit Car'

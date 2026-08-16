@@ -1,54 +1,191 @@
-import { Link, Outlet } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, NavLink, Outlet } from 'react-router-dom'
+import { siteConfig } from '../../lib/siteConfig'
+import { useContactInfos } from '../../hooks/useContactInfos'
+import {
+  CarIcon,
+  MailIcon,
+  MenuIcon,
+  PhoneIcon,
+  XIcon,
+} from '../icons'
+
+const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'Cars', path: '/cars' },
+  { label: 'About Us', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+]
 
 export default function UserLayout() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const { items: contactItems } = useContactInfos()
+
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-lg">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
-          <Link to="/" className="text-lg font-bold text-slate-900">
-            Car<span className="text-emerald-700">Booking</span>
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-2.5"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-700 text-white shadow-md shadow-emerald-700/20">
+              <CarIcon className="h-5 w-5" />
+            </span>
+            <span className="text-lg font-extrabold tracking-tight text-slate-900">
+              AMS <span className="text-emerald-700">Car Booking</span>
+            </span>
           </Link>
 
-          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 sm:flex">
-            <Link to="/" className="transition hover:text-emerald-700">
-              Home
-            </Link>
-            <Link to="/" className="transition hover:text-emerald-700">
-              Cars
-            </Link>
-            <Link to="/" className="transition hover:text-emerald-700">
-              Packages
-            </Link>
-            <Link to="/" className="transition hover:text-emerald-700">
-              Contact
-            </Link>
+          <nav className="hidden items-center gap-7 text-base font-semibold text-slate-900 md:flex">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                end={item.path === '/'}
+                className={({ isActive }) =>
+                  isActive ? 'text-emerald-700' : 'transition hover:text-emerald-700'
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </nav>
+
+          <div className="flex items-center gap-2">
+            <Link
+              to="/contact"
+              className="hidden rounded-xl bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-700/20 transition hover:bg-emerald-800 md:block"
+            >
+              Book Now
+            </Link>
+
+            <button
+              className="rounded-xl border border-slate-200 p-2 text-slate-900 md:hidden"
+              onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? (
+                <XIcon className="h-5 w-5" />
+              ) : (
+                <MenuIcon className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {menuOpen ? (
+          <nav className="border-t border-slate-200 bg-white px-4 py-3 md:hidden">
+            <div className="flex flex-col gap-1">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  end={item.path === '/'}
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `rounded-xl px-3 py-2.5 text-base font-semibold ${
+                      isActive
+                        ? 'bg-emerald-50 text-emerald-700'
+                        : 'text-slate-900 hover:bg-slate-50'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+
+              <Link
+                to="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="mt-2 rounded-xl bg-emerald-700 px-3 py-2.5 text-center text-base font-semibold text-white"
+              >
+                Book Now
+              </Link>
+            </div>
+          </nav>
+        ) : null}
       </header>
 
       <main className="flex-1">
         <Outlet />
       </main>
 
-      <footer className="border-t border-slate-800 bg-slate-950">
-        <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold text-white">
-                Car Booking Site
-              </p>
-              <p className="mt-1 text-xs text-slate-400">
-                Rent cars with drivers in Saudi Arabia.
-              </p>
+      <footer className="bg-slate-950 text-slate-300">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-4 py-12 sm:grid-cols-3 sm:px-6">
+          <div>
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-600 text-white">
+                <CarIcon className="h-5 w-5" />
+              </span>
+              <span className="text-lg font-extrabold text-white">
+                AMS <span className="text-emerald-500">Car Booking</span>
+              </span>
             </div>
-
-            <p className="text-xs text-slate-500">
-              © {new Date().getFullYear()} Car Booking Site. All rights
-              reserved.
+            <p className="mt-4 text-sm leading-6 text-slate-400">
+              Reliable cars with professional drivers for Makkah, Madinah,
+              airport pickups, Umrah transport and city tours.
             </p>
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-wider text-white">
+              Quick Links
+            </p>
+            <ul className="mt-4 space-y-2.5">
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className="text-sm text-slate-400 transition hover:text-emerald-400"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-sm font-bold uppercase tracking-wider text-white">
+              Contact
+            </p>
+            <ul className="mt-4 space-y-3">
+              {contactItems.map((item) =>
+                item.type === 'phone' ? (
+                  <li key={item.id}>
+                    <a
+                      href={`tel:${item.value.replace(/\s/g, '')}`}
+                      className="flex items-center gap-3 text-sm text-slate-400 transition hover:text-emerald-400"
+                    >
+                      <PhoneIcon className="h-4 w-4 text-emerald-500" />
+                      <span dir="ltr">{item.value}</span>
+                    </a>
+                  </li>
+                ) : (
+                  <li key={item.id}>
+                    <a
+                      href={`mailto:${item.value}`}
+                      className="flex items-center gap-3 text-sm text-slate-400 transition hover:text-emerald-400"
+                    >
+                      <MailIcon className="h-4 w-4 text-emerald-500" />
+                      <span className="break-all">{item.value}</span>
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-slate-800">
+          <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 px-4 py-5 sm:flex-row sm:px-6">
+            <p className="text-xs text-slate-500">
+              © {new Date().getFullYear()} {siteConfig.siteName}. All rights
+              reserved.
+            </p>
+
             <Link
               to="/admin"
               className="text-[10px] text-slate-700 transition hover:text-slate-500"
