@@ -31,9 +31,9 @@ export default function CarCard({
           </span>
         ) : null}
 
-        <span className="absolute bottom-3 left-3 rounded-full bg-slate-950/80 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">
+        {/* <span className="absolute bottom-3 left-3 rounded-full bg-slate-950/80 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">
           SAR {car.price_per_day}/day
-        </span>
+        </span> */}
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
