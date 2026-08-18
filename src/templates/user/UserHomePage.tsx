@@ -56,16 +56,16 @@ export default function UserHomePage() {
             </span>
 
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
-              Rent Cars with{' '}
+              Reliable{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-amber-300 bg-clip-text text-transparent">
-                Drivers
+                Taxi Service
               </span>{' '}
               in Saudi Arabia
             </h1>
 
             <p className="mt-5 text-sm leading-6 text-slate-400 sm:text-lg sm:leading-8">
               Makkah, Madinah, airport pickups, Umrah transport and city tours
-              — comfortable cars with professional drivers.
+              — comfortable taxis with professional drivers.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

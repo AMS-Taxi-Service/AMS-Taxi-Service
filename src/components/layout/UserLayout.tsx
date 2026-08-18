@@ -34,7 +34,7 @@ export default function UserLayout() {
               <CarIcon className="h-5 w-5" />
             </span>
             <span className="text-lg font-extrabold tracking-tight text-slate-900">
-              AMS <span className="text-emerald-700">Car Booking</span>
+              AMS <span className="text-emerald-700">Taxi Service</span>
             </span>
           </Link>
 
@@ -120,7 +120,7 @@ export default function UserLayout() {
                 <CarIcon className="h-5 w-5" />
               </span>
               <span className="text-lg font-extrabold text-white">
-                AMS <span className="text-emerald-500">Car Booking</span>
+                AMS <span className="text-emerald-500">Taxi Service</span>
               </span>
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-400">
