@@ -18,10 +18,12 @@ import AdminCarFormPage from './templates/admin/AdminCarFormPage'
 import ProtectedRoute from './routes/ProtectedRoute'
 import AdminContactInfoPage from './templates/admin/AdminContactInfoPage'
 import AdminWhatsappPage from './templates/admin/AdminWhatsappPage'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<UserLayout />}>
           <Route path="/" element={<UserHomePage />} />

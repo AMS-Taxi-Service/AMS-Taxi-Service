@@ -175,25 +175,60 @@ export default function UserHomePage() {
 
       {/* CTA */}
       <section className="bg-white">
-        <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-700 to-emerald-950 px-6 py-12 text-center sm:px-12 sm:py-16">
-            <div className="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
+        <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6">
+          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-emerald-800 via-emerald-900 to-slate-950 px-6 py-10 text-center shadow-2xl shadow-emerald-900/30 sm:px-10 sm:py-12">
+            {/* Decorative glows */}
+            <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl" />
 
-            <h2 className="relative text-2xl font-extrabold text-white sm:text-4xl">
-              Need a car for your trip?
-            </h2>
-            <p className="relative mx-auto mt-3 max-w-xl text-sm text-emerald-100 sm:text-base">
-              Contact us now and we will arrange the perfect car with a
-              professional driver for you.
-            </p>
+            {/* Subtle dot pattern */}
+            <div className="pointer-events-none absolute inset-0 opacity-10 [background-image:radial-gradient(circle_at_center,white_1px,transparent_1px)] [background-size:24px_24px]" />
 
-            <Link
-              to="/contact"
-              className="relative mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-emerald-800 shadow-lg transition hover:bg-emerald-50"
-            >
-              Contact Us
-              <ArrowRightIcon className="h-4 w-4" />
-            </Link>
+            <div className="relative mx-auto max-w-2xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-emerald-200 backdrop-blur">
+                <ClockIcon className="h-3.5 w-3.5" />
+                Available 24/7
+              </span>
+
+              <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-4xl">
+                Need a car for{' '}
+                <span className="bg-gradient-to-r from-emerald-300 to-amber-300 bg-clip-text text-transparent">
+                  your trip?
+                </span>
+              </h2>
+
+              <p className="mt-3 text-sm leading-6 text-emerald-100/80 sm:text-base sm:leading-7">
+                Contact us now and we will arrange the perfect car with a
+                professional driver for you — airport pickups, Umrah trips,
+                city tours and more.
+              </p>
+
+              <div className="mt-6 flex justify-center">
+                <Link
+                  to="/contact"
+                  className="flex items-center gap-2 rounded-xl bg-white px-7 py-3 text-sm font-bold text-emerald-900 shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-emerald-50"
+                >
+                  Contact Us
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
+              </div>
+
+              {/* Trust row */}
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-semibold text-emerald-100/70">
+                <span className="flex items-center gap-2">
+                  <ShieldCheckIcon className="h-4 w-4 text-emerald-300" />
+                  Licensed Drivers
+                </span>
+                <span className="flex items-center gap-2">
+                  <ClockIcon className="h-4 w-4 text-emerald-300" />
+                  On-Time Pickup
+                </span>
+                <span className="flex items-center gap-2">
+                  <StarIcon className="h-4 w-4 text-amber-300" />
+                  Trusted by Travellers
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
