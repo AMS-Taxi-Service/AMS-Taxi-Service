@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { fetchActiveCars } from '../../lib/carsApi'
+import { useDefaultWhatsappNumber } from '../../hooks/useDefaultWhatsappNumber'
 import type { Car } from '../../types/car'
 import CarCard from '../../components/user/CarCard'
-import { useDefaultWhatsappNumber } from '../../hooks/useDefaultWhatsappNumber'
 
 export default function UserCarsPage() {
   const [cars, setCars] = useState<Car[]>([])
   const [loading, setLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)  
+  const [hasError, setHasError] = useState(false)
   const whatsapp = useDefaultWhatsappNumber()
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function UserCarsPage() {
               Cars jald hi add ki jayengi.
             </div>
           ) : (
-            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
               {cars.map((car) => (
                 <CarCard
                   key={car.id}

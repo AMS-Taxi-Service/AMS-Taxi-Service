@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchActiveCars } from '../../lib/carsApi'
+import { useDefaultWhatsappNumber } from '../../hooks/useDefaultWhatsappNumber'
 import type { Car } from '../../types/car'
 import CarCard from '../../components/user/CarCard'
-import { useDefaultWhatsappNumber } from '../../hooks/useDefaultWhatsappNumber'
 import {
   ArrowRightIcon,
   ClockIcon,
@@ -15,7 +15,7 @@ import {
 export default function UserHomePage() {
   const [cars, setCars] = useState<Car[]>([])
   const [loading, setLoading] = useState(true)
-  
+  const whatsapp = useDefaultWhatsappNumber()
 
   useEffect(() => {
     let cancelled = false
@@ -38,8 +38,7 @@ export default function UserHomePage() {
     }
   }, [])
 
-   const featuredCars = cars.filter((car) => car.featured)
-   const whatsapp = useDefaultWhatsappNumber()
+  const featuredCars = cars.filter((car) => car.featured)
 
   return (
     <>
@@ -123,7 +122,9 @@ export default function UserHomePage() {
               <p className="text-sm font-bold text-slate-900">
                 Family Friendly
               </p>
-              <p className="text-xs text-slate-500">Vans & VIP cars for groups</p>
+              <p className="text-xs text-slate-500">
+                Vans & VIP cars for groups
+              </p>
             </div>
           </div>
         </div>
@@ -160,7 +161,7 @@ export default function UserHomePage() {
               Featured cars coming soon.
             </div>
           ) : (
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
               {featuredCars.map((car) => (
                 <CarCard
                   key={car.id}
@@ -185,7 +186,7 @@ export default function UserHomePage() {
             <div className="pointer-events-none absolute inset-0 opacity-10 [background-image:radial-gradient(circle_at_center,white_1px,transparent_1px)] [background-size:24px_24px]" />
 
             <div className="relative mx-auto max-w-2xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-emerald-200 backdrop-blur">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-emerald-200">
                 <ClockIcon className="h-3.5 w-3.5" />
                 Available 24/7
               </span>
