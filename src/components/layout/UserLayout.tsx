@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { siteConfig } from '../../lib/siteConfig'
 import { useContactInfos } from '../../hooks/useContactInfos'
+import { useLanguage } from '../../lib/LanguageContext'
+import type { TranslationKey } from '../../lib/translations'
+import LanguageSwitcher from '../LanguageSwitcher'
 import {
   CarIcon,
   MailIcon,
@@ -10,19 +13,23 @@ import {
   XIcon,
 } from '../icons'
 
-const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Cars', path: '/cars' },
-  { label: 'About Us', path: '/about' },
-  { label: 'Contact', path: '/contact' },
+const navItems: { key: TranslationKey; path: string }[] = [
+  { key: 'home', path: '/' },
+  { key: 'cars', path: '/cars' },
+  { key: 'aboutUs', path: '/about' },
+  { key: 'contact', path: '/contact' },
 ]
 
 export default function UserLayout() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { items: contactItems } = useContactInfos()
+  const { lang, t } = useLanguage()
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div
+      dir={lang === 'ar' ? 'rtl' : 'ltr'}
+      className="flex min-h-screen flex-col bg-white"
+    >
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/95">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link
@@ -45,20 +52,24 @@ export default function UserLayout() {
                 to={item.path}
                 end={item.path === '/'}
                 className={({ isActive }) =>
-                  isActive ? 'text-emerald-700' : 'transition hover:text-emerald-700'
+                  isActive
+                    ? 'text-emerald-700'
+                    : 'transition hover:text-emerald-700'
                 }
               >
-                {item.label}
+                {t(item.key)}
               </NavLink>
             ))}
           </nav>
 
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+
             <Link
               to="/contact"
               className="hidden rounded-xl bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-700/20 transition hover:bg-emerald-800 md:block"
             >
-              Book Now
+              {t('bookNow')}
             </Link>
 
             <button
@@ -92,7 +103,7 @@ export default function UserLayout() {
                     }`
                   }
                 >
-                  {item.label}
+                  {t(item.key)}
                 </NavLink>
               ))}
 
@@ -101,7 +112,7 @@ export default function UserLayout() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 rounded-xl bg-emerald-700 px-3 py-2.5 text-center text-base font-semibold text-white"
               >
-                Book Now
+                {t('bookNow')}
               </Link>
             </div>
           </nav>
@@ -124,14 +135,13 @@ export default function UserLayout() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-400">
-              Reliable cars with professional drivers for Makkah, Madinah,
-              airport pickups, Umrah transport and city tours.
+              {t('footerDesc')}
             </p>
           </div>
 
           <div>
             <p className="text-sm font-bold uppercase tracking-wider text-white">
-              Quick Links
+              {t('quickLinks')}
             </p>
             <ul className="mt-4 space-y-2.5">
               {navItems.map((item) => (
@@ -140,7 +150,7 @@ export default function UserLayout() {
                     to={item.path}
                     className="text-sm text-slate-400 transition hover:text-emerald-400"
                   >
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
@@ -149,7 +159,7 @@ export default function UserLayout() {
 
           <div>
             <p className="text-sm font-bold uppercase tracking-wider text-white">
-              Contact
+              {t('contactFooter')}
             </p>
             <ul className="mt-4 space-y-3">
               {contactItems.map((item) =>
@@ -182,8 +192,8 @@ export default function UserLayout() {
         <div className="border-t border-slate-800">
           <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 px-4 py-5 sm:flex-row sm:px-6">
             <p className="text-xs text-slate-500">
-              © {new Date().getFullYear()} {siteConfig.siteName}. All rights
-              reserved.
+              © {new Date().getFullYear()} {siteConfig.siteName}.{' '}
+              {t('rights')}
             </p>
 
             <Link

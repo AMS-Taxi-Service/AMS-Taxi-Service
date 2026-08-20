@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchActiveCars } from '../../lib/carsApi'
 import { useDefaultWhatsappNumber } from '../../hooks/useDefaultWhatsappNumber'
+import { useLanguage } from '../../lib/LanguageContext'
 import type { Car } from '../../types/car'
 import CarCard from '../../components/user/CarCard'
 
@@ -9,6 +10,7 @@ export default function UserCarsPage() {
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
   const whatsapp = useDefaultWhatsappNumber()
+  const { t } = useLanguage()
 
   useEffect(() => {
     let cancelled = false
@@ -38,14 +40,13 @@ export default function UserCarsPage() {
 
         <div className="relative mx-auto w-full max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">
-            Our Fleet
+            {t('ourFleet')}
           </p>
           <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Choose Your Perfect Car
+            {t('chooseCar')}
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sm text-slate-400 sm:text-base">
-            Every car includes a professional driver for safe and comfortable
-            travel across Saudi Arabia.
+            {t('carsPageDesc')}
           </p>
         </div>
       </section>
@@ -54,7 +55,7 @@ export default function UserCarsPage() {
         <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           {!loading && !hasError && cars.length > 0 ? (
             <p className="text-sm font-semibold text-slate-500">
-              {cars.length} cars available
+              {cars.length} {t('carsAvailable')}
             </p>
           ) : null}
 
@@ -64,11 +65,11 @@ export default function UserCarsPage() {
             </div>
           ) : hasError ? (
             <div className="mt-10 rounded-2xl bg-red-50 p-10 text-center text-sm font-medium text-red-700">
-              Cars load nahi ho sakin. Dobara try karo.
+              {t('carsError')}
             </div>
           ) : cars.length === 0 ? (
             <div className="mt-10 rounded-2xl border border-dashed border-slate-300 bg-white p-12 text-center text-sm text-slate-500">
-              Cars jald hi add ki jayengi.
+              {t('carsEmpty')}
             </div>
           ) : (
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
