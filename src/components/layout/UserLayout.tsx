@@ -31,16 +31,16 @@ export default function UserLayout() {
       className="flex min-h-screen flex-col bg-white"
     >
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/95">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
+        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-3 sm:px-6">
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2.5"
+            className="flex items-center gap-2 sm:gap-2.5"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-700 text-white shadow-md shadow-emerald-700/20">
-              <CarIcon className="h-5 w-5" />
+            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-700 text-white shadow-md shadow-emerald-700/20 sm:h-9 sm:w-9">
+              <CarIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             </span>
-            <span className="text-lg font-extrabold tracking-tight text-slate-900">
+            <span className="whitespace-nowrap text-xs font-extrabold tracking-tight text-slate-900 sm:text-lg">
               AMS <span className="text-emerald-700">Taxi Service</span>
             </span>
           </Link>

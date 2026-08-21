@@ -47,7 +47,7 @@ export default function UserHomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-slate-950">
         <img
-          src="/hero.png"
+          src="/hero.webp"
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
