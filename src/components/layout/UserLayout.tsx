@@ -40,7 +40,7 @@ export default function UserLayout() {
             <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-700 text-white shadow-md shadow-emerald-700/20 sm:h-9 sm:w-9">
               <CarIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             </span>
-            <span className="whitespace-nowrap text-xs font-extrabold tracking-tight text-slate-900 sm:text-lg">
+            <span className="whitespace-nowrap text-sm font-extrabold tracking-tight text-slate-900 sm:text-lg">
               AMS <span className="text-emerald-700">Taxi Service</span>
             </span>
           </Link>
