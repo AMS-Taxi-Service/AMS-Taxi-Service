@@ -46,11 +46,15 @@ export default function UserHomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-slate-950">
-        <img
-          src="/hero.webp"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <picture className="absolute inset-0 h-full w-full">
+          <source media="(min-width: 640px)" srcSet="/hero.webp" />
+          <img
+            src="/hero-mobile.png"
+            alt=""
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
 
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/30 to-slate-910" />
 
