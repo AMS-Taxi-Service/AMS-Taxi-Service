@@ -90,7 +90,7 @@ export default function UserHomePage() {
 
               <Link
                 to="/contact"
-                className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:bg-slate-800"
+                className="rounded-xl border border-slate-400 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:bg-slate-800"
               >
                 {t('contactUs')}
               </Link>
@@ -101,42 +101,50 @@ export default function UserHomePage() {
 
       {/* Trust strip */}
       <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-4 py-10 sm:grid-cols-3 sm:px-6">
-          <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-              <ShieldCheckIcon className="h-6 w-6" />
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-4 px-4 py-8 sm:grid-cols-3 sm:gap-5 sm:px-6 sm:py-10">
+          <div className="flex items-center gap-4 rounded-2xl bg-emerald-100 p-4 sm:p-5">
+            <span className="rounded-full border border-emerald-600/20 p-1.5">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-emerald-700 shadow-sm sm:h-12 sm:w-12">
+                <ShieldCheckIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+              </span>
             </span>
             <div>
               <p className="text-sm font-bold text-slate-900">
                 {t('licensedDrivers')}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="mt-0.5 text-xs text-slate-500">
                 {t('licensedDriversDesc')}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-50 text-amber-600">
-              <ClockIcon className="h-6 w-6" />
+          <div className="flex items-center gap-4 rounded-2xl bg-amber-100 p-4 sm:p-5">
+            <span className="rounded-full border border-amber-500/25 p-1.5">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-amber-600 shadow-sm sm:h-12 sm:w-12">
+                <ClockIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+              </span>
             </span>
             <div>
               <p className="text-sm font-bold text-slate-900">
                 {t('onTimePickup')}
               </p>
-              <p className="text-xs text-slate-500">{t('onTimePickupDesc')}</p>
+              <p className="mt-0.5 text-xs text-slate-500">
+                {t('onTimePickupDesc')}
+              </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">
-              <UsersIcon className="h-6 w-6" />
+          <div className="flex items-center gap-4 rounded-2xl bg-slate-200 p-4 sm:p-5">
+            <span className="rounded-full border border-slate-400/30 p-1.5">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-700 shadow-sm sm:h-12 sm:w-12">
+                <UsersIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+              </span>
             </span>
             <div>
               <p className="text-sm font-bold text-slate-900">
                 {t('familyFriendly')}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="mt-0.5 text-xs text-slate-500">
                 {t('familyFriendlyDesc')}
               </p>
             </div>
