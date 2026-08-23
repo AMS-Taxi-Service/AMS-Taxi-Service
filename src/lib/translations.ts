@@ -27,8 +27,7 @@ const en = {
   available247: 'Available 24/7',
   ctaTitle1: 'Need a car for',
   ctaTitleHighlight: 'your trip?',
-  ctaDesc:
-    'Contact us now and we will arrange the perfect car with a professional driver for you — airport pickups, Umrah trips, city tours and more.',
+  ctaDesc: 'Book instantly on WhatsApp and get\na quick confirmation.',
   trustedTravellers: 'Trusted by Travellers',
   ourFleet: 'Our Fleet',
   chooseCar: 'Choose Your Perfect Car',
@@ -99,8 +98,7 @@ const ar: Record<TranslationKey, string> = {
   available247: 'متاحون 24/7',
   ctaTitle1: 'تحتاج إلى سيارة',
   ctaTitleHighlight: 'لرحلتك؟',
-  ctaDesc:
-    'اتصل بنا الآن وسنجهز لك السيارة المثالية مع سائق محترف — استقبال المطارات، رحلات العمرة، جولات المدينة والمزيد.',
+  ctaDesc: 'احجز فوراً عبر واتساب\nواحصل على تأكيد سريع.',
   trustedTravellers: 'موثوقون لدى المسافرين',
   ourFleet: 'أسطولنا',
   chooseCar: 'اختر سيارتك المثالية',

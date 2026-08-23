@@ -10,6 +10,7 @@ import {
   MailIcon,
   MenuIcon,
   PhoneIcon,
+  WhatsAppIcon,
   XIcon,
 } from '../icons'
 
@@ -28,33 +29,35 @@ export default function UserLayout() {
   return (
     <div
       dir={lang === 'ar' ? 'rtl' : 'ltr'}
-      className="flex min-h-screen flex-col bg-white"
+      className="relative flex min-h-screen flex-col bg-slate-950"
     >
-      <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/95">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-3 sm:px-6">
+      <header
+        className={`absolute inset-x-0 top-0 z-40 transition ${
+          menuOpen ? 'bg-slate-950' : 'bg-transparent'
+        }`}
+      >
+        <div className="mx-auto flex h-16 w-full max-w-[1800px] items-center justify-between px-4 sm:px-6 lg:px-12 xl:px-20">
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-2 sm:gap-2.5"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-700 text-white shadow-md shadow-emerald-700/20 sm:h-9 sm:w-9">
+            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-md shadow-emerald-600/30 sm:h-9 sm:w-9">
               <CarIcon className="h-4 w-4 sm:h-5 sm:w-5" />
             </span>
-            <span className="whitespace-nowrap text-sm font-extrabold tracking-tight text-slate-900 sm:text-lg">
-              AMS <span className="text-emerald-700">Taxi Service</span>
+            <span className="whitespace-nowrap text-sm font-extrabold tracking-tight text-white sm:text-lg">
+              AMS <span className="text-emerald-400">Taxi Service</span>
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-7 text-base font-semibold text-slate-900 md:flex">
+          <nav className="hidden items-center gap-7 text-base font-semibold text-slate-200 md:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 end={item.path === '/'}
                 className={({ isActive }) =>
-                  isActive
-                    ? 'text-emerald-700'
-                    : 'transition hover:text-emerald-700'
+                  isActive ? 'text-emerald-400' : 'transition hover:text-white'
                 }
               >
                 {t(item.key)}
@@ -67,13 +70,14 @@ export default function UserLayout() {
 
             <Link
               to="/contact"
-              className="hidden rounded-xl bg-emerald-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-700/20 transition hover:bg-emerald-800 md:block"
+              className="hidden items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-600/30 transition hover:bg-emerald-500 md:flex"
             >
+              <WhatsAppIcon className="h-4 w-4" />
               {t('bookNow')}
             </Link>
 
             <button
-              className="rounded-xl border border-slate-200 p-2 text-slate-900 md:hidden"
+              className="rounded-xl border border-white/15 p-2 text-white md:hidden"
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
             >
@@ -87,7 +91,7 @@ export default function UserLayout() {
         </div>
 
         {menuOpen ? (
-          <nav className="border-t border-slate-200 bg-white px-4 py-3 md:hidden">
+          <nav className="border-t border-white/10 bg-slate-950 px-4 py-3 md:hidden">
             <div className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <NavLink
@@ -98,8 +102,8 @@ export default function UserLayout() {
                   className={({ isActive }) =>
                     `rounded-xl px-3 py-2.5 text-base font-semibold ${
                       isActive
-                        ? 'bg-emerald-50 text-emerald-700'
-                        : 'text-slate-900 hover:bg-slate-50'
+                        ? 'bg-white/10 text-emerald-400'
+                        : 'text-slate-200 hover:bg-white/5'
                     }`
                   }
                 >
@@ -110,8 +114,9 @@ export default function UserLayout() {
               <Link
                 to="/contact"
                 onClick={() => setMenuOpen(false)}
-                className="mt-2 rounded-xl bg-emerald-700 px-3 py-2.5 text-center text-base font-semibold text-white"
+                className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-3 py-2.5 text-base font-semibold text-white"
               >
+                <WhatsAppIcon className="h-4 w-4" />
                 {t('bookNow')}
               </Link>
             </div>
@@ -124,8 +129,8 @@ export default function UserLayout() {
       </main>
 
       <footer className="bg-slate-950 text-slate-300">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-4 py-12 sm:grid-cols-3 sm:px-6">
-          <div>
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-8 px-4 py-12 sm:grid-cols-3 sm:gap-10 sm:px-6">
+          <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center gap-2.5">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-600 text-white">
                 <CarIcon className="h-5 w-5" />

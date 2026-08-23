@@ -38,7 +38,7 @@ export default function UserCarsPage() {
       <section className="relative overflow-hidden bg-slate-950">
         <div className="pointer-events-none absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-emerald-600/20 blur-3xl" />
 
-        <div className="relative mx-auto w-full max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20">
+        <div className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-28 text-center sm:px-6 sm:pb-20 sm:pt-32">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-400">
             {t('ourFleet')}
           </p>

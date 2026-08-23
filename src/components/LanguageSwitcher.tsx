@@ -18,10 +18,10 @@ export default function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+        className="flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/10 px-2 py-1.5 text-xs font-semibold text-white transition hover:bg-white/20 sm:gap-2 sm:px-3 sm:py-2 sm:text-sm"
         aria-label="Change language"
       >
-        <GlobeIcon className="h-4 w-4 text-emerald-700" />
+        <GlobeIcon className="h-4 w-4 text-emerald-400" />
         <span>{current.label}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
