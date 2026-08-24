@@ -45,62 +45,67 @@ export default function UserHomePage() {
 
   return (
     <>
-      {/* Hero */}
+          {/* Hero */}
       <section className="relative overflow-hidden bg-slate-950">
-        {/* Background image — simple, koi flip nahi */}
-        <picture className="absolute inset-0 h-full w-full">
-          <source media="(min-width: 640px)" srcSet="/hero.png" />
+        {/* Image — mobile: flow me (poori, bina crop), desktop: absolute cover */}
+        <picture className="block sm:absolute sm:inset-0 sm:h-full sm:w-full">
+          <source media="(min-width: 640px)" srcSet="/hero.webp" />
           <img
-            src="/hero-mobile.png"
+            src="/hero-mobile.webp"
             alt=""
             fetchPriority="high"
-            className="h-full w-full object-cover object-top sm:object-center"
+            className="block h-auto w-full object-top sm:h-full sm:w-full sm:object-cover"
           />
         </picture>
 
-        {/* Text readability ke liye halka overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent sm:bg-gradient-to-r sm:from-slate-950/90 sm:via-slate-950/40 sm:to-transparent" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent sm:bg-gradient-to-r sm:from-slate-950/75 sm:via-slate-950/25 sm:to-transparent" />
 
-        <div className="relative mx-auto w-full max-w-[1800px] px-4 pb-40 pt-32 sm:px-6 sm:pb-28 sm:pt-40 lg:px-12 lg:pb-32 lg:pt-44 xl:px-20">
-          <div className="max-w-[78%] text-start sm:max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold tracking-wide text-emerald-300 sm:gap-2 sm:px-4 sm:py-1.5 sm:text-sm">
-              <StarIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-              {t('heroBadge')}
-            </span>
-
-            <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:mt-6 sm:text-5xl lg:text-6xl">
-              {t('heroTitle1')} {t('heroTitleHighlight')}
-              <span className="mt-1 block text-emerald-400">
-                {t('heroTitle2')}
+        {/* Content — mobile: image ke upar overlay, desktop: normal flow */}
+        <div className="absolute inset-x-0 top-0 sm:static">
+          <div className="relative mx-auto w-full max-w-[1800px] px-4 pb-52 pt-24 sm:px-6 sm:pb-36 sm:pt-28 lg:px-12 lg:pb-44 lg:pt-32 xl:px-20">
+            <div className="max-w-[78%] text-start sm:max-w-2xl">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold tracking-wide text-emerald-300 sm:gap-2 sm:px-4 sm:py-1.5 sm:text-sm">
+                <StarIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                {t('heroBadge')}
               </span>
-            </h1>
 
-            <p className="mt-3 text-xs leading-5 text-slate-300/80 sm:mt-5 sm:text-base sm:leading-7">
-              {t('heroDesc')}
-            </p>
+              <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:mt-6 sm:text-5xl lg:text-6xl">
+                {t('heroTitle1')} {t('heroTitleHighlight')}
+                <span className="mt-1 block text-emerald-400">
+                  {t('heroTitle2')}
+                </span>
+              </h1>
 
-            <div className="mt-6 flex flex-col items-start gap-2.5 sm:mt-8 sm:flex-row sm:items-center sm:gap-3 sm:justify-start">
-              <Link
-                to="/cars"
-                className="flex items-center justify-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-[11px] font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 sm:justify-start sm:gap-2 sm:rounded-xl sm:px-6 sm:py-3 sm:text-sm"
-              >
-                {t('browseCars')}
-                <ArrowRightIcon className="h-3 w-3 sm:h-4 sm:w-4" />
-              </Link>
+              <p className="mt-3 whitespace-pre-line text-xs leading-5 text-slate-300/80 sm:hidden">
+                {t('heroDescMobile')}
+              </p>
+              <p className="mt-3 hidden whitespace-pre-line text-xs leading-5 text-slate-300/80 sm:mt-5 sm:block sm:text-base sm:leading-7">
+                {t('heroDesc')}
+              </p>
 
-              <Link
-                to="/contact"
-                className="flex items-center justify-center rounded-lg bg-white px-4 py-2 text-[11px] font-semibold text-emerald-900 shadow-lg shadow-black/20 transition hover:bg-emerald-50 sm:rounded-xl sm:px-6 sm:py-3 sm:text-sm"
-              >
-                {t('contactUs')}
-              </Link>
+              <div className="mt-6 flex flex-col items-start gap-2.5 sm:mt-8 sm:flex-row sm:items-center sm:gap-3 sm:justify-start">
+                <Link
+                  to="/cars"
+                  className="flex items-center justify-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-[11px] font-semibold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 sm:justify-start sm:gap-2 sm:rounded-xl sm:px-6 sm:py-3 sm:text-sm"
+                >
+                  {t('browseCars')}
+                  <ArrowRightIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="flex items-center justify-center rounded-lg bg-white px-4 py-2 text-[11px] font-semibold text-emerald-900 shadow-lg shadow-black/20 transition hover:bg-emerald-50 sm:rounded-xl sm:px-6 sm:py-3 sm:text-sm"
+                >
+                  {t('contactUs')}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Trust strip — floating card */}
-      <section className="relative z-10 -mt-10 sm:-mt-12">
+        <section className="relative z-10 -mt-10 sm:-mt-8">
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="grid grid-cols-1 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-white shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
             <div className="flex items-center gap-3 p-5">
@@ -216,9 +221,9 @@ export default function UserHomePage() {
           <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-black/40">
             {/* Line-art background (poori card par) */}
             <picture>
-              <source media="(min-width: 1024px)" srcSet="/cta-art.png" />
+              <source media="(min-width: 1024px)" srcSet="/cta-art.webp" />
               <img
-                src="/cta-art-mobile.png"
+                src="/cta-art-mobile.webp"
                 alt=""
                 loading="lazy"
                 decoding="async"

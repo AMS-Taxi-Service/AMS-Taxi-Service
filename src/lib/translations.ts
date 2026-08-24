@@ -11,7 +11,8 @@ const en = {
   heroTitleHighlight: 'Taxi Service',
   heroTitle2: 'in Saudi Arabia',
   heroDesc:
-    'Makkah, Madinah, airport pickups, Umrah transport and city tours — comfortable taxis with professional drivers.',
+    'Makkah, Madinah, airport pickups, Umrah transport and city tours\n— comfortable taxis with professional drivers.',
+  heroDescMobile: 'Makkah, Madinah, airport pickups\n& Umrah transport.',
   browseCars: 'Browse Cars',
   contactUs: 'Contact Us',
   licensedDrivers: 'Licensed Drivers',
@@ -82,7 +83,8 @@ const ar: Record<TranslationKey, string> = {
   heroTitleHighlight: 'تاكسي موثوقة',
   heroTitle2: 'في السعودية',
   heroDesc:
-    'مكة، المدينة، استقبال المطارات، نقل المعتمرين وجولات المدينة — سيارات مريحة مع سائقين محترفين.',
+    'مكة، المدينة، استقبال المطارات، نقل المعتمرين وجولات المدينة\n— سيارات مريحة مع سائقين محترفين.',
+  heroDescMobile: 'مكة، المدينة، استقبال المطارات\nونقل المعتمرين.',  
   browseCars: 'تصفح السيارات',
   contactUs: 'اتصل بنا',
   licensedDrivers: 'سائقون مرخصون',
