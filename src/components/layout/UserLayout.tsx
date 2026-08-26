@@ -131,7 +131,7 @@ export default function UserLayout() {
         <Outlet />
       </main>
 
-      <footer className="bg-slate-950 text-slate-300">
+      <footer className="border-t border-slate-100 bg-slate-950 text-slate-300">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-8 px-4 py-12 sm:grid-cols-3 sm:gap-10 sm:px-6">
           <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center gap-2.5">
