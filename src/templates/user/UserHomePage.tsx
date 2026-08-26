@@ -107,62 +107,62 @@ export default function UserHomePage() {
       {/* Trust strip — floating card */}
       <section className="relative z-10 -mt-14 sm:-mt-8">
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-1 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-slate-50 shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
+          <div className="grid grid-cols-1 divide-y divide-slate-200/70 rounded-2xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
             {/* Licensed Drivers */}
-            <div className="group flex items-center gap-4 p-5 transition hover:bg-white/70">
-              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-lg shadow-emerald-600/25">
-                <ShieldCheckIcon className="h-5 w-5" />
+            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-lg shadow-emerald-600/25 sm:h-12 sm:w-12">
+                <ShieldCheckIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-[13px] font-bold text-slate-900 sm:text-sm">
                   {t('licensedDrivers')}
                 </p>
-                <p className="mt-0.5 text-xs text-slate-500">
+                <p className="mt-0.5 text-[11px] text-slate-500 sm:text-xs">
                   {t('licensedDriversDesc')}
                 </p>
               </div>
             </div>
 
             {/* On-Time Pickup */}
-            <div className="group flex items-center gap-4 p-5 transition hover:bg-slate-50/80">
-              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-lg shadow-orange-500/25">
-                <ClockIcon className="h-5 w-5" />
+            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-lg shadow-orange-500/25 sm:h-12 sm:w-12">
+                <ClockIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-[13px] font-bold text-slate-900 sm:text-sm">
                   {t('onTimePickup')}
                 </p>
-                <p className="mt-0.5 text-xs text-slate-500">
+                <p className="mt-0.5 text-[11px] text-slate-500 sm:text-xs">
                   {t('onTimePickupDesc')}
                 </p>
               </div>
             </div>
 
             {/* Family Friendly */}
-            <div className="group flex items-center gap-4 p-5 transition hover:bg-slate-50/80">
-              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25">
-                <UsersIcon className="h-5 w-5" />
+            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25 sm:h-12 sm:w-12">
+                <UsersIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-[13px] font-bold text-slate-900 sm:text-sm">
                   {t('familyFriendly')}
                 </p>
-                <p className="mt-0.5 text-xs text-slate-500">
+                <p className="mt-0.5 text-[11px] text-slate-500 sm:text-xs">
                   {t('familyFriendlyDesc')}
                 </p>
               </div>
             </div>
 
             {/* 24/7 Support */}
-            <div className="group flex items-center gap-4 p-5 transition hover:bg-slate-50/80">
-              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/25">
-                <PhoneIcon className="h-5 w-5" />
+            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/25 sm:h-12 sm:w-12">
+                <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-[13px] font-bold text-slate-900 sm:text-sm">
                   {t('support247')}
                 </p>
-                <p className="mt-0.5 text-xs text-slate-500">
+                <p className="mt-0.5 text-[11px] text-slate-500 sm:text-xs">
                   {t('support247Desc')}
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function UserHomePage() {
       {/* Featured Cars — big container */}
       <section>
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="mt-6 rounded-3xl border border-slate-100 bg-slate-50 p-4 shadow-xl shadow-slate-900/10 sm:mt-8 sm:p-8 lg:p-10">
+          <div className="mt-6 rounded-3xl border border-slate-200/70 bg-slate-100 p-4 shadow-xl shadow-slate-900/10 sm:mt-8 sm:p-8 lg:p-10">
             {/* Header row */}
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
@@ -222,24 +222,24 @@ export default function UserHomePage() {
       {/* CTA */}
       <section>
         <div className="mx-auto w-full max-w-[1800px] px-4 py-10 sm:px-6 sm:py-14 lg:px-12 xl:px-20">
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-black/40">
+            <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-slate-900/10">
             {/* Line-art background (poori card par) */}
-            <picture>
+            <picture className="block">
               <source media="(min-width: 1024px)" srcSet="/cta-art.webp" />
               <img
                 src="/cta-art-mobile.webp"
                 alt=""
                 loading="lazy"
                 decoding="async"
-                className="block max-h-[420px] w-full object-cover object-bottom sm:max-h-[480px] lg:h-auto lg:max-h-none"
+                className="block h-auto w-full"
               />
             </picture>
 
             {/* Text readability overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0a2e24]/80 via-transparent to-transparent sm:bg-gradient-to-r sm:from-[#0a2e24]/90 sm:via-[#0a2e24]/40 sm:to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0a2e24]/70 via-transparent to-transparent sm:bg-gradient-to-r sm:from-[#0a2e24]/90 sm:via-[#0a2e24]/40 sm:to-transparent" />
 
-            <div className="absolute inset-0 flex max-w-[68%] flex-col items-start justify-start px-6 py-8 sm:max-w-none sm:p-10 lg:max-w-xl lg:p-14">
-              <h2 className="text-xl font-extrabold tracking-tight text-white sm:text-3xl">
+            <div className="absolute inset-x-0 top-0 flex flex-col items-start justify-start px-6 py-6 sm:p-10 lg:inset-0 lg:max-w-xl lg:p-14">
+              <h2 className="text-lg font-extrabold tracking-tight text-white sm:text-3xl">
                 {t('ctaTitle1')}{' '}
                 <span className="text-emerald-300">
                   {t('ctaTitleHighlight')}

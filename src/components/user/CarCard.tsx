@@ -19,7 +19,7 @@ export default function CarCard({
   const { lang, t } = useLanguage()
 
   return (
-    <div className="group relative mx-1 flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg sm:mx-0 sm:rounded-3xl sm:hover:shadow-2xl sm:hover:shadow-emerald-900/10">
+    <div className="group relative mx-1 flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg shadow-slate-900/10 transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-2xl hover:shadow-slate-900/15 sm:mx-0 sm:rounded-3xl sm:shadow-xl sm:hover:shadow-2xl sm:hover:shadow-emerald-900/15">
       {/* Image Section */}
       <div className="relative h-40 overflow-hidden bg-slate-100 sm:h-60">
         {car.image_url ? (
