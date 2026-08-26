@@ -104,12 +104,12 @@ export default function UserHomePage() {
           </div>
         </div>
       </section>
-      {/* Trust strip — floating card */}
+      {/* Trust strip — 4 alag cards */}
       <section className="relative z-10 -mt-14 sm:-mt-8">
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-1 divide-y divide-slate-200/70 rounded-2xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {/* Licensed Drivers */}
-            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+            <div className="group flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-slate-100 p-4 shadow-md shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-lg sm:gap-4 sm:p-5">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-lg shadow-emerald-600/25 sm:h-12 sm:w-12">
                 <ShieldCheckIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
@@ -124,7 +124,7 @@ export default function UserHomePage() {
             </div>
 
             {/* On-Time Pickup */}
-            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+            <div className="group flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-slate-100 p-4 shadow-md shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-lg sm:gap-4 sm:p-5">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-lg shadow-orange-500/25 sm:h-12 sm:w-12">
                 <ClockIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
@@ -139,7 +139,7 @@ export default function UserHomePage() {
             </div>
 
             {/* Family Friendly */}
-            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+            <div className="group flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-slate-100 p-4 shadow-md shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-lg sm:gap-4 sm:p-5">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25 sm:h-12 sm:w-12">
                 <UsersIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
@@ -154,7 +154,7 @@ export default function UserHomePage() {
             </div>
 
             {/* 24/7 Support */}
-            <div className="group flex items-center gap-3 p-4 transition hover:bg-white/70 sm:gap-4 sm:p-5">
+            <div className="group flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-slate-100 p-4 shadow-md shadow-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-lg sm:gap-4 sm:p-5">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/25 sm:h-12 sm:w-12">
                 <PhoneIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
@@ -170,52 +170,46 @@ export default function UserHomePage() {
           </div>
         </div>
       </section>
-
-      {/* Featured Cars — big container */}
-      <section>
-        <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="mt-6 rounded-3xl border border-slate-200/70 bg-slate-100 p-4 shadow-xl shadow-slate-900/10 sm:mt-8 sm:p-8 lg:p-10">
-            {/* Header row */}
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
-                  {t('premiumFleet')}
-                </p>
-                <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                  {t('featuredCars')}
-                </h2>
-              </div>
-
-              <Link
-                to="/cars"
-                className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 shadow-sm transition hover:border-emerald-600 hover:text-emerald-700"
-              >
-                {t('viewAllCars')}
-                <ArrowRightIcon className="h-4 w-4" />
-              </Link>
+      {/* Featured Cars */}
+      <section className="pt-8 sm:pt-10">
+        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-12 xl:px-20">
+          {/* Header row */}
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-4xl">
+                {t('featuredCars')}
+              </h2>
             </div>
 
-            {/* Cards grid */}
-            {loading ? (
-              <div className="mt-8 flex justify-center">
-                <div className="h-10 w-10 animate-spin rounded-full border-4 border-emerald-600 border-t-transparent" />
-              </div>
-            ) : featuredCars.length === 0 ? (
-              <div className="mt-8 rounded-2xl border border-dashed border-slate-300 bg-white p-12 text-center text-sm text-slate-500">
-                {t('featuredComingSoon')}
-              </div>
-            ) : (
-              <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-                {featuredCars.map((car) => (
-                  <CarCard
-                    key={car.id}
-                    car={car}
-                    whatsappNumber={whatsapp?.number ?? null}
-                  />
-                ))}
-              </div>
-            )}
+            <Link
+              to="/cars"
+              className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-sm font-bold text-slate-200 shadow-sm transition hover:border-emerald-500 hover:text-emerald-400"
+            >
+              {t('viewAllCars')}
+              <ArrowRightIcon className="h-4 w-4" />
+            </Link>
           </div>
+
+          {/* Cards grid */}
+          {loading ? (
+            <div className="mt-8 flex justify-center">
+              <div className="h-10 w-10 animate-spin rounded-full border-4 border-emerald-600 border-t-transparent" />
+            </div>
+          ) : featuredCars.length === 0 ? (
+            <div className="mt-8 rounded-2xl border border-dashed border-slate-700 bg-slate-900/50 p-12 text-center text-sm text-slate-400">
+              {t('featuredComingSoon')}
+            </div>
+          ) : (
+            <div className="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3">
+              {featuredCars.map((car) => (
+                <CarCard
+                  key={car.id}
+                  car={car}
+                  whatsappNumber={whatsapp?.number ?? null}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
