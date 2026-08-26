@@ -8,7 +8,6 @@ import LanguageSwitcher from '../LanguageSwitcher'
 import {
   CarIcon,
   MailIcon,
-  MenuIcon,
   PhoneIcon,
   WhatsAppIcon,
   XIcon,
@@ -84,7 +83,11 @@ export default function UserLayout() {
               {menuOpen ? (
                 <XIcon className="h-5 w-5" />
               ) : (
-                <MenuIcon className="h-5 w-5" />
+                <span className="flex w-5 flex-col items-start gap-[5px]">
+                <span className="h-[2.5px] w-full rounded-full bg-white" />
+                <span className="h-[2.5px] w-3/5 rounded-full bg-white" />
+                <span className="h-[2.5px] w-full rounded-full bg-white" />
+          </span>
               )}
             </button>
           </div>

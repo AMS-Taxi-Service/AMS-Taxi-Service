@@ -32,8 +32,7 @@ const en = {
   trustedTravellers: 'Trusted by Travellers',
   ourFleet: 'Our Fleet',
   chooseCar: 'Choose Your Perfect Car',
-  carsPageDesc:
-    'Every car includes a professional driver for safe and comfortable travel across Saudi Arabia.',
+  carsPageDesc: 'Choose the perfect vehicle for your journey.',
   carsAvailable: 'cars available',
   carsEmpty: 'Cars will be added soon.',
   carsError: 'Cars could not be loaded. Please try again.',
@@ -68,6 +67,18 @@ const en = {
   quickLinks: 'Quick Links',
   contactFooter: 'Contact',
   rights: 'All rights reserved.',
+  allVehicles: 'All Vehicles',
+  sortByPopular: 'Sort by: Popular',
+  vehicleType: 'Vehicle Type',
+  all: 'All',
+  sedan: 'Sedan',
+  van: 'Van',
+  capacity: 'Capacity',
+  needHelp: 'Need Help?',
+  needHelpDesc: 'Our team is ready to help you find the perfect vehicle',
+  chatOnWhatsApp: 'Chat on WhatsApp',
+  cantFindWhatYouNeed: "Can't Find What You Need?",
+cantFindDesc: "Contact us on WhatsApp — we'll help you find the perfect ride.",
 }
 
 export type TranslationKey = keyof typeof en
@@ -104,8 +115,7 @@ const ar: Record<TranslationKey, string> = {
   trustedTravellers: 'موثوقون لدى المسافرين',
   ourFleet: 'أسطولنا',
   chooseCar: 'اختر سيارتك المثالية',
-  carsPageDesc:
-    'كل سيارة تشمل سائقاً محترفاً لسفر آمن ومريح في جميع أنحاء السعودية.',
+  carsPageDesc: 'اختر المركبة المثالية لرحلتك.',
   carsAvailable: 'سيارات متاحة',
   carsEmpty: 'سيتم إضافة السيارات قريباً.',
   carsError: 'تعذر تحميل السيارات. حاول مرة أخرى.',
@@ -139,6 +149,18 @@ const ar: Record<TranslationKey, string> = {
   quickLinks: 'روابط سريعة',
   contactFooter: 'التواصل',
   rights: 'جميع الحقوق محفوظة.',
+    allVehicles: 'جميع المركبات',
+  sortByPopular: 'الترتيب حسب: الأكثر شيوعاً',
+  vehicleType: 'نوع المركبة',
+  all: 'الكل',
+  sedan: 'سيدان',
+  van: 'فان',
+  capacity: 'السعة',
+  needHelp: 'تحتاج مساعدة؟',
+  needHelpDesc: 'فريقنا مستعد لمساعدتك في العثور على المركبة المثالية',
+  chatOnWhatsApp: 'محادثة عبر واتساب',
+  cantFindWhatYouNeed: 'لم تجد ما تحتاجه؟',
+    cantFindDesc: 'تواصل معنا عبر واتساب — سنساعدك في إيجاد المشوار المثالي.',
 }
 
 export const translations: Record<Language, Record<TranslationKey, string>> = {
