@@ -230,7 +230,7 @@ export default function UserHomePage() {
                 src="/cta-art-mobile.webp"
                 alt=""
                 loading="lazy"
-                decoding="async"
+                decoding="async" 
                 className="block h-auto w-full"
               />
             </picture>
