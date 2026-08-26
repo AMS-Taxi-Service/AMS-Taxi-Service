@@ -105,11 +105,12 @@ export default function UserHomePage() {
         </div>
       </section>
       {/* Trust strip — floating card */}
-        <section className="relative z-10 -mt-14 sm:-mt-8">
+      <section className="relative z-10 -mt-14 sm:-mt-8">
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-1 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-white shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
-            <div className="flex items-center gap-3 p-5">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+          <div className="grid grid-cols-1 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-slate-50 shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
+            {/* Licensed Drivers */}
+            <div className="group flex items-center gap-4 p-5 transition hover:bg-white/70">
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-lg shadow-emerald-600/25">
                 <ShieldCheckIcon className="h-5 w-5" />
               </span>
               <div>
@@ -122,8 +123,9 @@ export default function UserHomePage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-5">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-orange-50 text-orange-500">
+            {/* On-Time Pickup */}
+            <div className="group flex items-center gap-4 p-5 transition hover:bg-slate-50/80">
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-lg shadow-orange-500/25">
                 <ClockIcon className="h-5 w-5" />
               </span>
               <div>
@@ -136,8 +138,9 @@ export default function UserHomePage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-5">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
+            {/* Family Friendly */}
+            <div className="group flex items-center gap-4 p-5 transition hover:bg-slate-50/80">
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25">
                 <UsersIcon className="h-5 w-5" />
               </span>
               <div>
@@ -150,8 +153,9 @@ export default function UserHomePage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-5">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+            {/* 24/7 Support */}
+            <div className="group flex items-center gap-4 p-5 transition hover:bg-slate-50/80">
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/25">
                 <PhoneIcon className="h-5 w-5" />
               </span>
               <div>
@@ -170,7 +174,7 @@ export default function UserHomePage() {
       {/* Featured Cars — big container */}
       <section>
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="mt-6 rounded-3xl border border-slate-100 bg-white p-4 shadow-xl shadow-slate-900/10 sm:mt-8 sm:p-8 lg:p-10">
+          <div className="mt-6 rounded-3xl border border-slate-100 bg-slate-50 p-4 shadow-xl shadow-slate-900/10 sm:mt-8 sm:p-8 lg:p-10">
             {/* Header row */}
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
