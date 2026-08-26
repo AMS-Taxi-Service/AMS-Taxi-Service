@@ -105,7 +105,7 @@ export default function UserHomePage() {
         </div>
       </section>
       {/* Trust strip — floating card */}
-        <section className="relative z-10 -mt-10 sm:-mt-8">
+        <section className="relative z-10 -mt-14 sm:-mt-8">
         <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="grid grid-cols-1 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-white shadow-xl shadow-slate-900/10 md:grid-cols-4 md:divide-x md:divide-y-0">
             <div className="flex items-center gap-3 p-5">
